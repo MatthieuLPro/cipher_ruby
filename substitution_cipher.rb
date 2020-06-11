@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'cipher_core'
 
 ALPHABET        = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z].freeze
@@ -42,12 +43,10 @@ end
 
 def generate_alphabet_from_old_alphabet(current_alphabet, new_alphabet, sub_word)
   i = 0
-  new_alphabet.each_with_index do |letter, ind|
+  new_alphabet.each do |letter|
     next unless letter[1].nil?
 
-    while sub_word.find_index(current_alphabet[i])
-      i += 1
-    end
+    i += 1 while sub_word.find_index(current_alphabet[i])
 
     new_alphabet[letter[0]] = current_alphabet[i]
     i += 1
