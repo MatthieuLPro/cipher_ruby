@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-def convert_text(new_alphabet, old_text)
+def encode_text(new_alphabet, old_text)
   new_text = ''
 
   # changer la methode du old_text => besoin de generer un array avec les conditions suivantes :

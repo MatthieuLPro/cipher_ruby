@@ -4,7 +4,7 @@ require_relative 'cipher_core'
 
 ALPHABET        = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z].freeze
 sub_word        = ARGV[0]
-text_to_convert = ARGV[1]
+text_to_encode  = ARGV[1]
 old_alphabet    = ARGV[2] ? ARGV[2].split(' ') : ALPHABET
 
 def sub_word_is_valide?(current_alphabet, sub_word)
@@ -56,4 +56,4 @@ end
 
 new_alphabet = generate_new_alphabet(old_alphabet, sub_word)
 
-puts 'new_text: ' + convert_text(new_alphabet, text_to_convert)
+puts 'new_text: ' + encode_text(new_alphabet, text_to_encode)
